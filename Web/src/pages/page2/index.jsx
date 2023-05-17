@@ -1,7 +1,7 @@
 import { Header } from "../../components/Header";
 
 
-function Page2(){
+export function Page2(){
 
   return(
     <>
@@ -14,4 +14,4 @@ function Page2(){
   )
 }
 
-export default Page2
+ 
