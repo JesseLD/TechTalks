@@ -7,20 +7,10 @@ import light from './styles/light.js'
 
 import { Home } from './pages/Home/index.jsx'
 import { About } from './pages/About'
-// import { Page2 } from './pages/Page2'
+import { Contact } from './pages/Contact'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router';
 
-
-// const router = createBrowserRouter([
-//   {
-//     path:"/",
-//     element:<Principal/>
-//   },
-//   {
-//     path:"/page2",
-//     element:<Page2/>
-//   }
-// ])
 
 const router = createBrowserRouter([
     {
@@ -34,10 +24,13 @@ const router = createBrowserRouter([
         {
           path:"/about",
           element:<About/>
+        },
+        {
+          path:"/contact",
+          element:<Contact/>
         }
       ]
-    }
-    
+    }   
   ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -45,6 +38,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <ThemeProvider theme={light}>
         <GlobalStyles/>
         <RouterProvider router={router}>
+          <MemoryRouter>
+            
+          </MemoryRouter>
         </RouterProvider>
       </ThemeProvider>
   </React.StrictMode>,

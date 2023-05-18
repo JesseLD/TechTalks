@@ -7,7 +7,7 @@ export const Container = styled.button`
   justify-content: center;
   align-items: center;
   font-weight: normal;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   background-color: #000;
   color: #fff;
   transition: all 150ms 0s;

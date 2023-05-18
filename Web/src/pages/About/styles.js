@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 
-  max-width: 90vw;
+  width: 90vw;
   padding: 0 5vw;
-  height: 100vh;
   display: flex;
   flex-flow: column;
   margin-top: 50px;
   font-size: 1.3rem;
+  margin-bottom: 100px;
 
   h1{
     margin-bottom: 15px;

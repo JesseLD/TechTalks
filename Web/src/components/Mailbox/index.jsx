@@ -7,7 +7,9 @@ export function Mailbox(){
     <Container>
       <form action="#" method="post">
         <input type="email" name="email" id="email" placeholder="Insira O Seu Email" required/>
-        <Button/>
+        <Button
+          text="Se Inscreva"
+        />
       </form>
     </Container>
   )
