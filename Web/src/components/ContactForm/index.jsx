@@ -3,6 +3,7 @@ import { Container } from "./styles"
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Messages } from "../../pages/partials/Messages";
 
 export function ContactForm(){
 
@@ -23,7 +24,12 @@ export function ContactForm(){
       await axios.post('http://localhost:9696/contact-messages', dados , {headers})
       .then(response =>{
         
-        navigate('/form-feedback');
+        navigate('/home');
+        <Messages
+          // title="Sucesso"
+          message="Mensagem enviada com sucesso"
+          type="success"
+        />
         console.log(response)
       })
       .catch((err)=>{

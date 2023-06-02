@@ -1,57 +1,61 @@
 import { Container } from './styles'
 import PropTypes from 'prop-types'
+import { useState, useEffect } from 'react'
+// import styled from "styled-components";
 
 
-export function Messages({text,type}){
 
-  let display = 'flex'
+const FlashMessage = ({ message,type}) =>{
+  return (
+    <Container>
+      <div className={`flash-message ${type}`}>{message}</div>
+    </Container>
 
-  let BGColor = '#000000'
-  let color = '#ffffff'
-
-  if(type == 'success'){
-    BGColor = '#18b13a33'
-    color = '#0a4b18'
-  }
-  else if(type == 'warning'){
-    BGColor = '#99630033'
-    color = '#664200'
-  }
-  else if(type == 'error'){
-    BGColor = '#7f000033'
-    color = '#4c0000'
-  }
-  else{
-      BGColor = '#00000033'
-      color = '#ffffff'
-      text = 'Error no type specified'
-    }
-
-  return(
-      <Container>
-        <div
-          style={{
-            display: `${display}`,
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '50px',
-            width: '80vw',
-            backgroundColor: `${BGColor}`,
-            color: `${color}`,
-            textAlign: 'center',
-            borderRadius: '10px',
-            // fontWeight: 'bold',
-            margin: '0px auto',
-        
-        
-          }}
-        >
-          <p>{text}</p>
-        </div>
-      </Container>
-    )
+  )
 }
-Messages.propTypes = {
-  text: PropTypes.string,
+
+export const Messages = () =>{
+
+  const [flashMessages,setFlashMessages] = useState(() => ([]))
+
+  const addFlashMessage = (message, type) => {
+    const newMessage = { message, type};
+    setFlashMessages(prevMessages => [...prevMessages, newMessage]);
+
+  }
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setFlashMessages([]);
+    }, 3000);
+    
+    return () => clearTimeout(timer);
+  }, [flashMessages]);
+
+
+  return (
+      <div>
+        {/* Renderiza todas as flash messages */}
+        {flashMessages.map((message, index) => (
+          <FlashMessage
+            key={index}
+            message={message.message}
+            type={message.type}
+          />
+        ))}
+  
+        {/* Exemplo de botão que adiciona uma flash message */}
+        {/* <button
+          onClick={() => addFlashMessage('Exemplo de flash message', 'success')}
+        >
+          Adicionar Flash Message
+        </button> */}
+      </div>
+    );
+}
+
+FlashMessage.propTypes = {
+  message: PropTypes.string,
   type: PropTypes.string,
 }
+

@@ -29,7 +29,7 @@ export const Container = styled.div`
  
   }
   .footer-info{
-    margin: 60px 0;
+    margin: 20px 0;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -75,8 +75,15 @@ export const Container = styled.div`
     cursor: pointer;
 
   }
+  .icon-container{
+    display: flex;
+    flex-direction: row;
+  }
+
   .icon{
-    width: 25px;
+    /* width: 45px; */
+    /* display: block; */
+    font-size: 40px;
     margin-right: 20px;
     cursor: pointer;
     transition: all 100ms ease 0s;
@@ -84,6 +91,106 @@ export const Container = styled.div`
   }
   .icon:hover{
     transform: scale(1.1);
+  }
+  @media (max-width:1023px){
+    margin: auto;
+    margin-top: 10px;
+    background-color: red;
+  
+    .newsletter-cta{
+      flex-direction: column;
+      align-items: center;
+      h2,p{
+        margin: 15px 0;
+      }
+      
+    }
+    .icon{
+      font-size: 25px;
+    }
+    .footer-info{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+    }
+    .logo-and-text{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img{
+        margin: 15px 0;
+      }
+    }
+    .footer-menu{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      padding: 10px;
+      max-width: 90vw;
+      width: 100%;
+      place-items: center;
+      
+      gap: 15px;
+      margin-top: 25px;
+    }
+   
+    .info-line{
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+    }
+
+  }
+  @media (max-width: 768px) {
+    .newsletter-cta{
+      flex-direction: column;
+      align-items: center;
+      h2,p{
+        margin: 15px 0;
+      }
+    }
+    .icon{
+      font-size: 25px;
+    }
+    .footer-info{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
+    .logo-and-text{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img{
+        margin: 15px 0;
+      }
+    }
+    .footer-menu{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      max-width: 90vw;
+      width: 100%;
+      place-items: center;
+      gap: 15px;
+      margin-top: 25px;
+    }
+    .legal{
+      position: relative;
+      left: calc(50% + 5vw);
+      text-align: center;
+      /* transform: translateX(-50%); */
+    }
+    .info-line{
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      gap: 10px;
+    }
+
   }
 
   `

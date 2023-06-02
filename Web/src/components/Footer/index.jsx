@@ -1,10 +1,10 @@
 import { Container } from "./styles"; 
 import { Divider } from "../Divider";
 import { Mailbox } from "../Mailbox";
-import logo from '../../assets/logo.png'
-import twitter from '../../assets/icons/logo-twitter.svg'
-import linkedin from '../../assets/icons/logo-linkedin.svg'
-import github from '../../assets/icons/logo-github.svg'
+import { IoLogoTwitter } from "react-icons/io5";
+import { IoLogoLinkedin } from "react-icons/io5";
+import { IoLogoGithub } from "react-icons/io5";
+import logo from '../../assets/logo.png';
 const date = new Date();
 
 export function Footer(){
@@ -15,12 +15,10 @@ export function Footer(){
 
       <Container>
         <div className="newsletter-cta">
-
           <div className="newsletter-text">
             <h2>Se Inscreva na nossa newsletter</h2>
             <p>Fique ligado nas ultimas noticias anúncios e artigos</p>
           </div >
-
           <div>
             <Mailbox/>
           </div>
@@ -54,14 +52,14 @@ export function Footer(){
               <li>Suporte</li>
             </ul>
 
-            <ul>
+            <ul className="Social">
               <h3>Social</h3>
               <li>Twitter</li>
               <li>Github</li>
               <li>Linkedin</li>
             </ul>
 
-            <ul>
+            <ul className="legal">
               <h3>Legal</h3>
               <li>Termos</li>
               <li>Privacidade</li>
@@ -75,9 +73,11 @@ export function Footer(){
           <p className="copy">© {date.getFullYear()} TechTalks. Todos os direitos reservados</p>
 
           <div className="icons">
-            <img className="icon" src={twitter} alt="" />
-            <img className="icon" src={linkedin} alt="" />
-            <img className="icon" src={github} alt="" />
+              <ul className="icon-container">
+                <li className="icon"><IoLogoTwitter/></li>
+                <li className="icon"><IoLogoLinkedin/></li>
+                <li className="icon"><IoLogoGithub/></li>
+              </ul>
           </div>
         </div>
       </Container>

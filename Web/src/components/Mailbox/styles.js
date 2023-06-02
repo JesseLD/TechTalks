@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-
- 
-
+  display: flex;
+  justify-content: center;
 
   form{
     width: 600px;
@@ -38,6 +37,22 @@ export const Container = styled.div`
 
   #email::placeholder{
     font-size: 1.1rem;
+  }
+  @media (max-width:1023px){
+    
+
+  }
+  @media (max-width: 768px) {
+    form{
+      width: 90vw;
+      height: 180px;
+      flex-direction: column;
+      align-items: center;
+
+    }
+    input{
+      margin: 15px 0;
+    }
   }
 
   `

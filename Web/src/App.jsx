@@ -15,7 +15,7 @@ function App() {
 
      <Divider/>
      <Header/>
-      {/* <Messages/> */}
+     <Messages/>
      <Outlet/>
 
     
