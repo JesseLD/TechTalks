@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.footer`
 
   display: flex;
   width: 90vw;
@@ -95,7 +95,6 @@ export const Container = styled.div`
   @media (max-width:1023px){
     margin: auto;
     margin-top: 10px;
-    background-color: red;
   
     .newsletter-cta{
       flex-direction: column;

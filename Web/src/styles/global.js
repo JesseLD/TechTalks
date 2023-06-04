@@ -9,6 +9,8 @@ export default createGlobalStyle`
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: subpixel-antialiased;
+    text-rendering: optimizeLegibility;
   }
 
 

@@ -2,6 +2,7 @@
 // import { Divider } from "../../components/Divider"
 import { Mailbox } from "../../components/Mailbox"
 import { Container } from "./styles"
+import { LastNews } from "../../components/News/LastNews"
 
 // import { Outlet } from "react-router-dom"
 
@@ -11,12 +12,11 @@ export function Home(){
 
   return(
   <>
-  
-    
     <Container>
       <h1>Tecnologia Moldando o futuro</h1>
       <h3>Descubra as últimas inovações e tendências que estão transformando o mundo ao nosso redor</h3>
       <Mailbox/>
+      <LastNews/>
     </Container>
 
   </>
